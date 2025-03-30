@@ -1,7 +1,5 @@
 import React from 'react';
 import { Calendar, Clock, MapPin, PartyPopper, User } from 'lucide-react';
-import image1 from '@/assets/bHour.png';
-import image2 from '@/assets/bHour1.png';
 
 interface InvitationPageProps {
   params: {
@@ -62,14 +60,14 @@ export default function InvitationPage({ params }: InvitationPageProps) {
               <img
                 src="/images/bHour.png"
                 alt="Celebrant with orange party hat"
-                className="w-full h-full object-cover "
+                className="w-full h-full object-cover"
               />
             </div>
             <div className="relative w-32 h-32 transform transition-transform hover:scale-105">
               <img
                 src="/images/bHour1.png"
                 alt="Celebrant with pink party hat"
-                className="w-full h-full object-cover "
+                className="w-full h-full object-cover"
               />
             </div>
           </div>
@@ -84,7 +82,7 @@ export default function InvitationPage({ params }: InvitationPageProps) {
           </div>
 
           <div className="transform hover:scale-105 transition-transform">
-            <h1 className="text-4xl font-bold text-gray-800 mb-2">You're Invited!</h1>
+            <h1 className="text-4xl font-bold text-gray-800 mb-2">You`re Invited!</h1>
             <p className="text-2xl font-semibold bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
               {`To ${eventDetails.celebrantName}'s Birthday`}
             </p>
@@ -102,7 +100,7 @@ export default function InvitationPage({ params }: InvitationPageProps) {
             { Icon: MapPin, label: "Location", value: eventDetails.location }
           ].map(({ Icon, label, value }, index) => (
             <div 
-              key={label}
+              key={index}
               className="flex items-center space-x-4 p-4 bg-gradient-to-r from-pink-50 to-purple-50 rounded-lg hover:shadow-md transition-all transform hover:-translate-y-1"
             >
               <Icon className="w-6 h-6 text-pink-500" />
