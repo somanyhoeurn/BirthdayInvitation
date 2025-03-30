@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Dangrek&display=swap');
 
 /* :root {
   --background: #ffffff;
@@ -18,9 +19,7 @@
     --foreground: #ededed;
   }
 }
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+ */
+/* body {
+  font-family: "Dangrek", sans-serif;
 } */

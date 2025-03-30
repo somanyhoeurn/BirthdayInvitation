@@ -114,7 +114,7 @@ export default async function InvitationPage({ params }: InvitationPageProps) {
 
         <div className="mt-8 text-center">
           <p className="text-gray-600 italic">
-            {`"Let's make this birthday unforgettable!"`}
+            {`"Ort mk kab tov kab dol teas hx"`}
           </p>
         </div>
 
