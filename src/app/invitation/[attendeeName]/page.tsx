@@ -2,13 +2,13 @@ import React from 'react';
 import { Calendar, Clock, MapPin, PartyPopper, User } from 'lucide-react';
 
 interface InvitationPageProps {
-  params: {
-    attendeeName: string;
-  };
+  params: Promise<{ attendeeName: string }>; // Update the type to reflect that params is a Promise
 }
 
-export default function InvitationPage({ params }: InvitationPageProps) {
-  const { attendeeName } = params;
+export default async function InvitationPage({ params }: InvitationPageProps) {
+  // Await the params to resolve the Promise
+  const resolvedParams = await params;
+  const { attendeeName } = resolvedParams;
 
   const eventDetails = {
     celebrantName: "Song ThaiHour",
@@ -32,7 +32,7 @@ export default function InvitationPage({ params }: InvitationPageProps) {
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
               animation: `float ${5 + Math.random() * 5}s infinite`,
-              animationDelay: `${Math.random() * 5}s`
+              animationDelay: `${Math.random() * 5}s`,
             }}
           >
             🎈
@@ -97,9 +97,9 @@ export default function InvitationPage({ params }: InvitationPageProps) {
           {[
             { Icon: Calendar, label: "Date", value: eventDetails.date },
             { Icon: Clock, label: "Time", value: eventDetails.time },
-            { Icon: MapPin, label: "Location", value: eventDetails.location }
+            { Icon: MapPin, label: "Location", value: eventDetails.location },
           ].map(({ Icon, label, value }, index) => (
-            <div 
+            <div
               key={index}
               className="flex items-center space-x-4 p-4 bg-gradient-to-r from-pink-50 to-purple-50 rounded-lg hover:shadow-md transition-all transform hover:-translate-y-1"
             >
